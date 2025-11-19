@@ -33,7 +33,7 @@
   <!-- Reviews Section -->
   <div class="col-8 offset-3 mb-3">
     <hr>
-    <% if (currentUser) { %>
+    <% if (currentUser._id) { %>
       <h4>Reviews:</h4>
       <form action="/listings/<%= listing._id %>/review" method="POST" novalidate class="needs-validation">
         <!-- Rating -->
