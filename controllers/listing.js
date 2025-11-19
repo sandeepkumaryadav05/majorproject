@@ -16,7 +16,7 @@ module.exports.show=async (req,res,next)=>{
     req.flash("error","Listing not found!");
     return res.redirect("/listings");
     }
-    //console.log(listing);
+    // console.log(listing);
     res.render("listings/show.ejs",{listing});
 }
 
