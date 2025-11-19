@@ -65,7 +65,9 @@ async function main() {
         maxAge:1000*60*60*24*7,
     }
   }
-
+//   app.get("/",(req,res)=>{
+//     res.send("hi I am root");  
+//  });
 
  app.use(session(sessionOption));
  app.use(flash());
@@ -91,7 +93,6 @@ async function main() {
   app.use("/",userRouter);
 
 
-
 app.all("*",(req,res,next)=>{
    next(new ExpressError(404,"page not found"));
 });
@@ -99,8 +100,9 @@ app.all("*",(req,res,next)=>{
 app.use((err,req,res,next)=>{
   let{statusCode=500,message}=err;
   res.status(statusCode).render("error.ejs",{message});//it use for show error
+  //res.status(statusCode).send(message);
 })
 
-app.listen(8080,()=>{
+app.listen(process.env.PORT||8080,()=>{
     console.log("server is connected");   
 });
