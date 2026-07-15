@@ -1,172 +1,147 @@
+
 # 🌍 WonderLust
 
-> A full-stack Airbnb-inspired accommodation booking platform built with
-> **Node.js, Express.js, MongoDB, EJS, Passport.js, Cloudinary, and
-> Bootstrap**.
-
-```{=html}
 <p align="center">
-```
-`<a href="https://majorproject-7z8l.onrender.com/listings">`{=html}🚀
-Live Demo`</a>`{=html} •
-`<a href="https://github.com/sandeepkumaryadav05/majorproject">`{=html}💻
-Repository`</a>`{=html}
-```{=html}
+  <img src="https://img.shields.io/badge/Node.js-Backend-339933?logo=node.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/Express.js-Framework-black?logo=express" />
+  <img src="https://img.shields.io/badge/MongoDB-Database-47A248?logo=mongodb&logoColor=white" />
+  <img src="https://img.shields.io/badge/Bootstrap-Frontend-7952B3?logo=bootstrap&logoColor=white" />
+  <img src="https://img.shields.io/badge/License-MIT-blue" />
 </p>
-```
 
-------------------------------------------------------------------------
+<h3 align="center">An Airbnb-inspired Full Stack Accommodation Booking Platform</h3>
 
-# 📖 Overview
+<p align="center">
+<a href="https://majorproject-7z8l.onrender.com/listings"><strong>🚀 Live Demo</strong></a> •
+<a href="https://github.com/sandeepkumaryadav05/majorproject"><strong>💻 Repository</strong></a>
+</p>
 
-WonderLust is a full-stack web application where users can browse,
-create, edit and manage travel accommodation listings. Registered users
-can upload listing images, write reviews, and securely authenticate
-using Passport.js.
+---
 
-------------------------------------------------------------------------
+# ✨ About
+
+WonderLust is a production-style full-stack web application inspired by Airbnb. Users can browse properties, create listings, upload images, authenticate securely, and review accommodations. The project follows the MVC architecture and demonstrates modern backend development practices.
+
+---
 
 # ✨ Features
 
--   🔐 User Authentication (Signup/Login/Logout)
--   🏠 CRUD Operations for Listings
--   ⭐ Ratings & Reviews
--   ☁️ Cloudinary Image Upload
--   📍 Location-based Listings
--   🛡️ Server-side Validation (Joi)
--   💾 MongoDB Database
--   📱 Responsive UI using Bootstrap
--   ⚡ MVC Architecture
+- 🔐 Authentication & Authorization
+- 🏠 Property Listing Management (CRUD)
+- ☁️ Cloudinary Image Upload
+- ⭐ Ratings & Reviews
+- 📍 Location Details
+- 🛡️ Joi Validation
+- 📱 Responsive Bootstrap UI
+- ⚡ Session Management
+- 🧩 MVC Architecture
+- 🌐 RESTful Routing
 
-------------------------------------------------------------------------
+---
 
 # 🛠 Tech Stack
 
-  Frontend    Backend      Database        Authentication    Deployment
-  ----------- ------------ --------------- ----------------- ------------
-  HTML5       Node.js      MongoDB         Passport.js       Render
-  CSS3        Express.js   Mongoose        Express Session   Cloudinary
-  Bootstrap   EJS          MongoDB Atlas   Passport Local    GitHub
+| Category | Technologies |
+|----------|--------------|
+| Frontend | HTML5, CSS3, Bootstrap, JavaScript, EJS |
+| Backend | Node.js, Express.js |
+| Database | MongoDB Atlas, Mongoose |
+| Authentication | Passport.js, Express Session |
+| Cloud | Cloudinary |
+| Deployment | Render |
 
-------------------------------------------------------------------------
+---
 
-# 🚀 Live Demo
+# 🏛 Project Architecture
 
-https://majorproject-7z8l.onrender.com/listings
-
-# 💻 GitHub
-
-https://github.com/sandeepkumaryadav05/majorproject
-
-------------------------------------------------------------------------
-
-# 🏗 System Architecture
-
-``` mermaid
+```mermaid
 graph TD
-A[Browser]
-B[Express Server]
-C[Routes]
-D[Controllers]
-E[Models]
-F[(MongoDB)]
-G[Cloudinary]
-H[EJS Views]
-
-A -->|HTTP| B
-B --> C
-C --> D
-D --> E
-E --> F
-D --> G
-D --> H
-H --> A
+User --> Browser
+Browser --> Express
+Express --> Routes
+Routes --> Controllers
+Controllers --> Models
+Models --> MongoDB[(MongoDB Atlas)]
+Controllers --> Cloudinary
+Controllers --> EJS
+EJS --> Browser
 ```
 
-# 🏗 MVC Architecture
+# 🏗 MVC Flow
 
-``` mermaid
+```mermaid
 graph LR
-User --> Routes --> Controllers --> Models --> MongoDB
-Controllers --> Views
-Views --> User
+User-->Routes-->Controller-->Model-->MongoDB
+Controller-->View
+View-->User
 ```
 
 # 🗄 ER Diagram
 
-``` mermaid
+```mermaid
 erDiagram
-
 USER ||--o{ LISTING : owns
 USER ||--o{ REVIEW : writes
 LISTING ||--o{ REVIEW : contains
 
 USER {
-ObjectId id
-string username
-string email
-string password
+ string username
+ string email
+ string password
 }
-
 LISTING {
-ObjectId id
-string title
-string description
-number price
-string location
-string country
-string image
-ObjectId owner
+ string title
+ string description
+ number price
+ string location
+ string country
+ string image
 }
-
 REVIEW {
-ObjectId id
-number rating
-string comment
-ObjectId author
-ObjectId listing
+ number rating
+ string comment
 }
 ```
 
 # 🔐 Authentication Flow
 
-``` mermaid
+```mermaid
 flowchart TD
-A[Signup/Login]
--->B[Passport.js]
-B-->C{Valid Credentials?}
+A[User Login]
+-->B[Passport Local]
+B-->C{Valid?}
 C--Yes-->D[Create Session]
 D-->E[Dashboard]
-C--No-->F[Error Message]
+C--No-->F[Error]
 ```
 
 # 🌐 Request Lifecycle
 
-``` mermaid
+```mermaid
 sequenceDiagram
-User->>Browser: Visit Listings
+User->>Browser: Open Listings
 Browser->>Express: GET /listings
 Express->>Controller: Route
-Controller->>MongoDB: Fetch Data
-MongoDB-->>Controller: Listings
+Controller->>MongoDB: Query
+MongoDB-->>Controller: Data
 Controller-->>Browser: Render EJS
-Browser-->>User: Display Listings
+Browser-->>User: Display Page
 ```
 
-# 🚀 Deployment Architecture
+# 🚀 Deployment
 
-``` mermaid
-graph TD
+```mermaid
+graph LR
 Developer-->GitHub
 GitHub-->Render
-Render-->MongoDBAtlas
+Render-->MongoDB
 Render-->Cloudinary
 Users-->Render
 ```
 
 # 📂 Folder Structure
 
-``` text
+```text
 majorproject/
 ├── controllers/
 ├── models/
@@ -177,85 +152,96 @@ majorproject/
 ├── utils/
 ├── init/
 ├── app.js
-├── package.json
-└── README.md
+└── package.json
 ```
 
-# ⚙️ Installation
+# ⚙ Installation
 
-``` bash
+```bash
 git clone https://github.com/sandeepkumaryadav05/majorproject.git
 cd majorproject
 npm install
 ```
 
-Create `.env`
+Create a `.env` file:
 
-``` env
-ATLASDB_URL=your_mongodb_uri
-SECRET=your_secret
-CLOUD_NAME=your_cloud_name
-CLOUD_API_KEY=your_key
-CLOUD_API_SECRET=your_secret
+```env
+ATLASDB_URL=
+SECRET=
+CLOUD_NAME=
+CLOUD_API_KEY=
+CLOUD_API_SECRET=
 ```
 
 Run:
 
-``` bash
+```bash
 npm start
 ```
 
-Open:
-
-    http://localhost:8080
+---
 
 # 📸 Screenshots
 
-Add screenshots for:
+Replace these placeholders after uploading images.
 
--   Home Page
--   Listings
--   Listing Details
--   Login
--   Signup
--   Add Listing
--   Reviews
+| Home | Listing |
+|------|---------|
+| ![](screenshots/home.png) | ![](screenshots/listing.png) |
+
+| Login | Create Listing |
+|------|----------------|
+| ![](screenshots/login.png) | ![](screenshots/create.png) |
+
+---
 
 # 🎯 Learning Outcomes
 
--   MVC Architecture
--   REST APIs
--   CRUD Operations
--   Authentication
--   Session Management
--   Image Upload
--   MongoDB Relationships
--   Cloud Deployment
--   Error Handling
--   Responsive Design
+- MVC Architecture
+- REST APIs
+- CRUD Operations
+- Authentication
+- MongoDB Relationships
+- Cloudinary Integration
+- Session Management
+- Deployment on Render
+
+---
 
 # 🔮 Future Enhancements
 
--   Payment Gateway
--   Wishlist
--   Booking System
--   Google Maps Integration
--   Search & Filters
--   Email Verification
--   Forgot Password
--   Admin Dashboard
+- 💳 Payment Gateway
+- ❤️ Wishlist
+- 🗺 Google Maps
+- 🔍 Advanced Search
+- 📅 Booking Calendar
+- 📧 Email Verification
+- 👤 User Profiles
+- 🛠 Admin Dashboard
+
+---
+
+# 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome. Feel free to fork the repository and submit a pull request.
+
+---
 
 # 👨‍💻 Author
 
 **Sandeep Kumar Yadav**
 
--   GitHub: https://github.com/sandeepkumaryadav05
--   LinkedIn: https://www.linkedin.com/in/sandeepkumaryadav05/
+- GitHub: https://github.com/sandeepkumaryadav05
+- LinkedIn: https://www.linkedin.com/in/sandeepkumaryadav05/
+
+---
 
 # ⭐ Support
 
-If you like this project, please give it a ⭐ on GitHub.
+If you found this project helpful, consider giving it a ⭐ on GitHub.
+
+---
 
 # 📄 License
 
-This project is for educational and portfolio purposes.
+This project is licensed under the MIT License.
