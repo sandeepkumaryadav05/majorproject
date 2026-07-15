@@ -189,9 +189,12 @@ Replace these placeholders after uploading images.
 |------|
 |<img width="1897" height="872" alt="image" src="https://github.com/user-attachments/assets/5383f3b5-9f0d-4589-a07f-f57fdfce6f90" />|
 
-| Login | Create Listing |
-|------|----------------|
+| Login |
+|------|
 |<img width="1917" height="861" alt="image" src="https://github.com/user-attachments/assets/6979ecca-7582-468a-a009-0bba37945308" />|
+
+| Create Listing |
+|------|
 |<img width="1896" height="861" alt="image" src="https://github.com/user-attachments/assets/f084ff1e-6aca-44ff-88a2-0f2c29e6117a" />|
 
 ---
@@ -233,7 +236,7 @@ Contributions, issues, and feature requests are welcome. Feel free to fork the r
 **Sandeep Kumar Yadav**
 
 - GitHub: https://github.com/sandeepkumaryadav05
-- LinkedIn: https://www.linkedin.com/in/sandeepkumaryadav05/
+
 
 ---
 
@@ -242,7 +245,3 @@ Contributions, issues, and feature requests are welcome. Feel free to fork the r
 If you found this project helpful, consider giving it a ⭐ on GitHub.
 
 ---
-
-# 📄 License
-
-This project is licensed under the MIT License.
