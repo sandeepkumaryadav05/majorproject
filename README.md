@@ -187,14 +187,13 @@ Replace these placeholders after uploading images.
 
 | Home | Listing |
 |------|---------|
-| ![](<img width="1897" height="872" alt="image" src="https://github.com/user-attachments/assets/5383f3b5-9f0d-4589-a07f-f57fdfce6f90" />
-) | ![](screenshots/listing.png) |
+|<img width="1897" height="872" alt="image" src="https://github.com/user-attachments/assets/5383f3b5-9f0d-4589-a07f-f57fdfce6f90" />|
 
 | Login | Create Listing |
 |------|----------------|
-| ![](<img width="1917" height="861" alt="image" src="https://github.com/user-attachments/assets/6979ecca-7582-468a-a009-0bba37945308" />
-) | ![](<img width="1896" height="861" alt="image" src="https://github.com/user-attachments/assets/f084ff1e-6aca-44ff-88a2-0f2c29e6117a" />
-) |
+|<img width="1917" height="861" alt="image" src="https://github.com/user-attachments/assets/6979ecca-7582-468a-a009-0bba37945308" />
+<img width="1896" height="861" alt="image" src="https://github.com/user-attachments/assets/f084ff1e-6aca-44ff-88a2-0f2c29e6117a" />
+|
 
 ---
 
